@@ -6,7 +6,13 @@ const packageName = 'main';
 
 module.exports = {
   mode: "production",
-  entry: "./src/"+packageName+".js",
+  resolve: {
+    alias: {
+      Sass: path.resolve(__dirname, './src/scss'),
+      Vendor: path.resolve(__dirname, './src/vendor')
+    }
+  },
+  entry: "./src/js/"+packageName+".js",
   output: {
     path: path.resolve(__dirname + "/dist"),
     filename: packageName+".js",

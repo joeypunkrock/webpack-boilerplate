@@ -1,0 +1,85 @@
+@import "./variables";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+@import "./partials/fonts";
+@import "./partials/modal";
+
+body {
+    background-color: $gray-900;
+    color: $font-color;
+}
+
+hr.hr--small {
+    border: 0;
+    height: 1px;
+    max-width: 25%;
+}
+
+hr.hr--light {
+    background: #8b8b8b;
+}
+
+.container--medium {
+    max-width: map-get($container-max-widths, "md");;
+}
+
+.container--small {
+    max-width: map-get($container-max-widths, "sm");;
+}
+
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light h4 {
+    color: $gray-800;
+}
+
+.glide__arrow--custom {
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 9px 12px;
+    background-color: transparent;
+    border:none;
+    border-radius: 4px;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity .15s ease,border .3s ease-in-out;
+    transform: translateY(-50%);
+    line-height: 1;
+}
+
+.img-clickable-container {
+    position: relative;
+    &::before {
+        content: '+';
+        text-align: center;
+        font-size: 35px;
+        line-height: 32px;
+        display: block;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+        color: #ffffff;
+        border: solid 1px #ffffff;
+    }
+    &:hover {
+        &::before {
+            background-color: #ffffff;
+            color: $gray-800;
+        }
+    }
+}
+
+.img-clickable {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+}
